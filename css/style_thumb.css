@@ -1,0 +1,486 @@
+/*IMPORTAÇÕES*/
+@font-face {
+    font-family: "Nexa Text";
+    src: url("/assets/fontes/Nexa-ExtraLight.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nexa Bold";
+    src: url("/assets/fontes/Nexa-Bold.ttf");
+    font-weight: normal;
+    font-size: normal;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+/*CABEÇALHO*/
+.navbar {
+    margin: 5px 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0 60px;
+    border-bottom: 1px solid black;
+}
+
+.navbar_logo {
+    margin: 10px 0;
+    height: 30px;
+}
+
+/* --- Botão do Menu (Hamburguer) --- */
+#menu-toggle {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    border: 0;
+    background: transparent;
+    padding: 10px 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#menu-toggle span {
+    width: 30px;
+    height: 2px;
+    border-radius: 10px;
+    background: black;
+}
+
+/* --- Links de Navegação --- */
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 15px;
+    font-family: "Nexa Text";
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.7s cubic-bezier(0.30, 1, 0.32, 1);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000000;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 10px 10px;
+    border-radius: 4px;
+}
+
+.nav-links.active {
+    max-height: 500px;
+    padding-top: 15px;
+    gap: 20px;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.nav-links a:hover {
+    background-color: #f5f5f5;
+    color: #333333;
+    transform: translateY(-2px);
+}
+
+
+.nav-links a.active {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+
+.nav-links a:focus {
+    outline: 2px solid #000000;
+    outline-offset: 2px;
+}
+
+.nav-links a:hover {
+    background-color: #f0f0f0;
+    color: #000000;
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*CONTEUDO DA PAGINA */
+main {
+    flex: 1;
+}
+
+.projetos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(209, 203, 203);
+    margin: 0 auto;
+    margin-top: 30px;
+    padding-bottom: 10px;
+    width: 1130px;
+}
+
+.projetos h1 {
+    font-family: "nexa Bold";
+    font-size: 25px;
+}
+
+.tipos_projetos {
+    cursor: pointer;
+}
+
+.projetos__icones {
+    display: flex;
+    gap: 15px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.grupos {
+    font-family: "Nexa text";
+    font-size: 13px;
+    display: flex;
+    gap: 50px;
+    margin: 15px 110px;
+}
+
+.repeticao_text {
+    font-family: "Nexa Bold";
+    font-size: 0.8em;
+    display: flex;
+    margin-left: 110px;
+    gap: 25px;
+}
+
+.repeticao p {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.empresarial::after {
+    content: " Residencial Residencial Residencial Residencial Residencial";
+    word-spacing: 25px;
+}
+
+.casa_bomba-projetos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 40px 110px;
+    max-width: 1200px;
+    justify-content: flex-start;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: calc((100% - 40px) / 3);
+}
+
+.card img {
+    height: auto;
+    width: 100%;
+    display: block;
+}
+
+.card p {
+    position: absolute;
+    bottom: 0;
+    width: 230px;
+    background: white;
+    color: black;
+    font-family: "Nexa Bold";
+    font-size: 0.8em;
+    padding: 9px 0 0 30px;
+}
+
+/*RODAPÉ*/
+footer {
+    display: flex;
+    align-items: flex-start;
+    width: 1105px;
+    margin: 0 auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 1.5px solid #868686;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.footer__brand {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.footer__brand p {
+    font-family: "Nexa Text";
+    font-size: 0.8em;
+    line-height: 20px;
+    margin-top: 13px;
+}
+
+.footer__brand img {
+    height: 140px;
+    padding-left: 20px;
+}
+
+.footer-contact {
+    font-family: "Nexa Text";
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 30%;
+    gap: 17px;
+}
+
+.footer-contact img {
+    margin-right: 15px;
+    height: 20px;
+}
+
+.footer-contact a {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* ===== MEDIA QUERIES PARA RESPONSIVIDADE ===== */
+
+/* Tablet (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .navbar {
+        padding: 0 30px;
+    }
+
+    .projetos {
+        width: 90%;
+        margin: 30px auto 0;
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .projetos h1 {
+        font-size: 22px;
+    }
+
+    .projetos__icones {
+        align-self: flex-end;
+    }
+
+    .grupos {
+        margin: 15px 5%;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .repeticao_text {
+        margin-left: 5%;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .casa_bomba-projetos {
+        margin: 40px 5%;
+        max-width: 90%;
+        justify-content: center;
+    }
+
+    .card {
+        width: calc((100% - 20px) / 2);
+        min-width: 280px;
+    }
+
+    .card p {
+        width: calc(100% - 30px);
+        max-width: 250px;
+    }
+
+    footer {
+        width: 90%;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-contact {
+        margin-left: 0;
+    }
+}
+
+/* Mobile (até 768px) */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-links.active {
+        margin-right: 0;
+        padding-left: 0;
+    }
+
+    .projetos {
+        width: 95%;
+        margin: 20px auto 0;
+        padding-bottom: 15px;
+    }
+
+    .projetos h1 {
+        font-size: 20px;
+    }
+
+    .projetos__icones {
+        gap: 10px;
+        height: 20px;
+    }
+
+    .grupos {
+        margin: 15px 2.5%;
+        gap: 20px;
+        font-size: 12px;
+    }
+
+    .repeticao_text {
+        margin-left: 2.5%;
+        gap: 15px;
+        font-size: 0.75em;
+    }
+
+    .casa_bomba-projetos {
+        margin: 30px 2.5%;
+        max-width: 95%;
+        gap: 15px;
+    }
+
+    .card {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .card p {
+        width: calc(100% - 30px);
+        font-size: 0.75em;
+        padding: 8px 0 0 20px;
+    }
+
+    footer {
+        width: 95%;
+        padding: 15px 0;
+    }
+
+    .footer__brand {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer__brand img {
+        height: 100px;
+        padding-left: 0;
+    }
+
+    .footer-contact {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Mobile pequeno (até 480px) */
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .navbar_logo {
+        height: 25px;
+    }
+
+    .projetos {
+        width: 98%;
+        margin: 15px auto 0;
+    }
+
+    .projetos h1 {
+        font-size: 18px;
+    }
+
+    .projetos__icones {
+        height: 18px;
+        gap: 8px;
+    }
+
+    .grupos {
+        margin: 10px 1%;
+        gap: 15px;
+        font-size: 11px;
+        flex-direction: column;
+    }
+
+    .repeticao_text {
+        margin-left: 1%;
+        gap: 10px;
+        font-size: 0.7em;
+        flex-direction: column;
+    }
+
+    .casa_bomba-projetos {
+        margin: 20px 1%;
+        max-width: 98%;
+        gap: 10px;
+    }
+
+    .card p {
+        font-size: 0.7em;
+        padding: 6px 0 0 15px;
+    }
+
+    .footer__brand img {
+        height: 80px;
+    }
+
+    .footer-contact {
+        font-size: 0.75em;
+        gap: 12px;
+    }
+
+    .footer-contact img {
+        height: 16px;
+    }
+}
+
+/* Ajustes específicos para o grid de cards */
+@media screen and (max-width: 1200px) and (min-width: 769px) {
+    .card {
+        width: calc((100% - 20px) / 2);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+}

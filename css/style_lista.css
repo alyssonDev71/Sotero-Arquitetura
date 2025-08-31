@@ -1,0 +1,512 @@
+/*IMPORTAÇÕES*/
+@font-face {
+    font-family: "Nexa Text";
+    src: url("/assets/fontes/Nexa-ExtraLight.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nexa Bold";
+    src: url("/assets/fontes/Nexa-Bold.ttf");
+    font-weight: normal;
+    font-size: normal;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+/*CABEÇALHO*/
+
+.navbar {
+    margin: 5px 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0 60px;
+    border-bottom: 1px solid black;
+}
+
+.navbar_logo {
+    margin: 10px 0;
+    height: 30px;
+}
+
+/* --- Botão do Menu (Hamburguer) --- */
+#menu-toggle {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    border: 0;
+    background: transparent;
+    padding: 10px 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#menu-toggle span {
+    width: 30px;
+    height: 2px;
+    border-radius: 10px;
+    background: black;
+}
+
+/* --- Links de Navegação --- */
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 15px;
+    font-family: "Nexa Text";
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.7s cubic-bezier(0.30, 1, 0.32, 1);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000000;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 10px 10px;
+    border-radius: 4px;
+}
+
+.nav-links.active {
+    max-height: 500px;
+    padding-top: 15px;
+    gap: 20px;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.nav-links a:hover {
+    background-color: #f5f5f5;
+    color: #333333;
+    transform: translateY(-2px);
+}
+
+.nav-links a.active {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.nav-links a:focus {
+    outline: 2px solid #000000;
+    outline-offset: 2px;
+}
+
+.nav-links a:hover {
+    background-color: #f0f0f0;
+    color: #000000;
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*CONTEUDO DA PAGINA*/
+main {
+    flex: 1;
+}
+
+.projetos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(209, 203, 203);
+    margin: 0 auto;
+    margin-top: 30px;
+    padding-bottom: 10px;
+    width: 1130px;
+    max-width: 90%;
+}
+
+.projetos h1 {
+    font-family: "nexa Bold";
+    font-size: 25px;
+}
+
+.tipos_projetos {
+    cursor: pointer;
+}
+
+.projetos__icones {
+    display: flex;
+    gap: 15px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.grupos {
+    font-family: "Nexa text";
+    font-size: 13px;
+    display: flex;
+    gap: 50px;
+    margin: 15px 120px;
+}
+
+.classificacao {
+    font-family: "Nexa Bold";
+    display: flex;
+    margin: 40px 120px;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(209, 203, 203);
+}
+
+.classificacao_projeto {
+    margin-right: auto;
+}
+
+.classificacao_grupos {
+    display: flex;
+    gap: 140px;
+}
+
+.lista__classificacao {
+    font-family: "Nexa Text";
+    font-size: 0.9em;
+    border-bottom: 1px solid rgb(209, 203, 203);
+    padding-bottom: 10px;
+    color: #868686;
+    display: flex;
+    margin: 0 120px;
+    margin-top: -20px;
+}
+
+.lista__classificacao-nome {
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.lista__classificacao-grupos {
+    display: flex;
+    gap: 100px;
+}
+
+/*RODAPÉ*/
+
+footer {
+    display: flex;
+    align-items: flex-start;
+    width: 1105px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 1.5px solid #868686;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.footer__brand {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.footer__brand p {
+    font-family: "Nexa Text";
+    font-size: 0.8em;
+    line-height: 20px;
+    margin-top: 13px;
+}
+
+.footer__brand img {
+    height: 140px;
+    padding-left: 20px;
+}
+
+.footer-contact {
+    font-family: "Nexa Text";
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 30%;
+    gap: 17px;
+}
+
+.footer-contact img {
+    margin-right: 15px;
+    height: 20px;
+}
+
+.footer-contact a {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* RESPONSIVIDADE */
+
+/* Tablets (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .navbar {
+        padding: 0 40px;
+    }
+
+    .projetos {
+        width: 95%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .projetos h1 {
+        font-size: 22px;
+    }
+
+    .grupos {
+        margin: 15px 60px;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .classificacao {
+        margin: 40px 60px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .classificacao_grupos {
+        gap: 80px;
+    }
+
+    .lista__classificacao {
+        margin: 0 60px;
+        margin-top: -20px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .lista__classificacao-grupos {
+        gap: 60px;
+    }
+
+    footer {
+        width: 95%;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .footer-contact {
+        margin-left: 20%;
+    }
+}
+
+/* Tablets pequenos e celulares grandes (481px - 768px) */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0 20px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        margin-right: 0;
+        gap: 10px;
+    }
+
+    .projetos {
+        width: 95%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .projetos h1 {
+        font-size: 20px;
+    }
+
+    .projetos__icones {
+        gap: 10px;
+        height: 20px;
+    }
+
+    .grupos {
+        margin: 15px 20px;
+        gap: 20px;
+        flex-wrap: wrap;
+        font-size: 12px;
+    }
+
+    .classificacao {
+        margin: 40px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .classificacao_grupos {
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .lista__classificacao {
+        margin: 0 20px;
+        margin-top: -20px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .lista__classificacao-grupos {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    footer {
+        width: 95%;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .footer__brand {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer__brand img {
+        height: 100px;
+        padding-left: 0;
+        align-self: center;
+    }
+
+    .footer-contact {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Celulares (até 480px) */
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .navbar_logo {
+        height: 25px;
+    }
+
+    #menu-toggle span {
+        width: 25px;
+    }
+
+    .projetos {
+        margin-top: 20px;
+        padding-bottom: 15px;
+    }
+
+    .projetos h1 {
+        font-size: 18px;
+    }
+
+    .projetos__icones {
+        height: 18px;
+        gap: 8px;
+    }
+
+    .grupos {
+        margin: 10px 15px;
+        gap: 15px;
+        font-size: 11px;
+    }
+
+    .classificacao {
+        margin: 30px 15px;
+        gap: 10px;
+    }
+
+    .classificacao_grupos {
+        gap: 20px;
+    }
+
+    .lista__classificacao {
+        margin: 0 15px;
+        margin-top: -15px;
+        font-size: 0.8em;
+    }
+
+    .lista__classificacao-grupos {
+        gap: 15px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    .footer__brand img {
+        height: 80px;
+    }
+
+    .footer__brand p {
+        font-size: 0.7em;
+        line-height: 18px;
+    }
+
+    .footer-contact {
+        font-size: 0.7em;
+        gap: 12px;
+    }
+
+    .footer-contact img {
+        height: 16px;
+        margin-right: 10px;
+    }
+}
+
+/* Celulares muito pequenos (até 320px) */
+@media screen and (max-width: 320px) {
+    .navbar {
+        padding: 0 10px;
+    }
+
+    .projetos h1 {
+        font-size: 16px;
+    }
+
+    .grupos {
+        margin: 10px 10px;
+        gap: 10px;
+        font-size: 10px;
+    }
+
+    .classificacao {
+        margin: 20px 10px;
+    }
+
+    .lista__classificacao {
+        margin: 0 10px;
+        margin-top: -10px;
+    }
+
+    .footer__brand img {
+        height: 60px;
+    }
+
+    .footer-contact img {
+        height: 14px;
+        margin-right: 8px;
+    }
+}

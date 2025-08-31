@@ -1,49 +1,458 @@
-*{
+/*IMPORTAÇÕES*/
+@font-face {
+    font-family: "Nexa Text";
+    src: url("/assets/fontes/Nexa-ExtraLight.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nexa Bold";
+    src: url("/assets/fontes/Nexa-Bold.ttf");
+    font-weight: normal;
+    font-size: normal;
+}
+
+* {
     margin: 0px;
     padding: 0px;
-    box-sizing: border-box;
 
 }
-body{
+
+body {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-color: white;
 }
 
-.navbar{
-    margin: 12px 0;
+/*CABEÇALHO*/
+
+.navbar {
+    margin: 5px 0;
     display: flex;
-    align-items: center;
+    flex-wrap: nowrap;
     justify-content: space-between;
     padding: 0 60px;
 }
-button{
+
+.navbar_logo {
+    margin: 10px 0;
+    height: 30px;
+}
+
+/* --- Botão do Menu (Hamburguer) --- */
+#menu-toggle {
     display: flex;
     flex-direction: column;
     row-gap: 5px;
     border: 0;
     background: transparent;
+    padding: 10px 0;
+
 }
-button:hover{
+
+button:hover {
     cursor: pointer;
 }
-button span{
-    width: 35px;
-    height: 3px;
+
+#menu-toggle span {
+    width: 30px;
+    height: 2px;
     border-radius: 10px;
     background: black;
 }
-.navbar_logo{
-    margin: 10px;
-    margin-left: 60px;
-    height: 45px;
 
+/* --- Links de Navegação --- */
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 15px;
+    font-family: "Nexa Text";
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.7s cubic-bezier(0.30, 1, 0.32, 1);
 }
+
+.nav-links a {
+    text-decoration: none;
+    color: #000000;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 10px 10px;
+    border-radius: 4px;
+}
+
+.nav-links.active {
+    max-height: 500px;
+    padding-top: 15px;
+    gap: 20px;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.nav-links a:hover {
+    background-color: #f5f5f5;
+    color: #333333;
+    transform: translateY(-2px);
+}
+
+
+.nav-links a.active {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+
+.nav-links a:focus {
+    outline: 2px solid #000000;
+    outline-offset: 2px;
+}
+
+.nav-links a:hover {
+    background-color: #f0f0f0;
+    color: #000000;
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*CONTEÚDO DO SITE*/
+.conteudo {
+    flex: 1;
+}
+
 .casa_bomba {
     width: 100%;
-    height: 100vh;
+    position: relative;
     overflow: hidden;
-} 
+}
+
 .casa_bomba img {
     width: 100%;
     object-fit: cover;
+}
+
+
+
+.quadrado_conteudo {
+    position: absolute;
+    bottom: 11.5%;
+    left: 9.2%;
+    background: white;
+    padding: 32px;
+    width: 180px;
+    height: 29%;
+
+}
+
+.quadrado_conteudo h1 {
+    font-family: "Nexa Bold";
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.quadrado_conteudo p {
+    font-family: "Nexa Text";
+    font-size: 12px;
+    margin-top: 85px;
+
+}
+
+.brand {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: -10px;
+    padding-left: 124px;
+}
+
+.brand-info {
+    border: 2.5px solid #868686;
+    border-top: transparent;
+    border-right: transparent;
+    padding: 120px 35px 120px 90px;
+    max-width: 450px;
+    background-color: white;
+}
+
+.brand-info h2 {
+    font-family: "Nexa Text";
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #424040;
+}
+
+.brand-info p {
+    font-family: "Nexa Text";
+    font-size: 0.9em;
+    line-height: 1.8;
+}
+
+.brand img {
+    margin-top: 40px;
+    padding-right: 124px;
+    height: 80%;
+    max-width: 500px;
+    align-self: flex-start;
+}
+
+/*RODAPÉ*/
+
+footer {
+    display: flex;
+    align-items: flex-start;
+    width: 1105px;
+    margin: 0 auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 1.5px solid #868686;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+
+}
+
+.footer__brand {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 25px;
+
+}
+
+.footer__brand p {
+    font-family: "Nexa Text";
+    font-size: 0.8em;
+    line-height: 20px;
+    margin-top: 13px;
+
+}
+
+.footer__brand img {
+    height: 140px;
+    padding-left: 20px;
+
+}
+
+.footer-contact {
+    font-family: "Nexa Text";
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 30%;
+    gap: 17px;
+}
+
+.footer-contact img {
+    margin-right: 15px;
+    height: 20px;
+}
+
+.footer-contact a {
+    color: #000000;
+    text-decoration: none;
+}
+
+/*MEDIA QUERIES PARA RESPONSIVIDADE*/
+
+/* Tablet - 1024px e abaixo */
+@media (max-width: 1024px) {
+
+    /* Navbar - reduz padding lateral */
+    .navbar {
+        padding: 0 40px;
+    }
+
+    .navbar_logo {
+        margin-left: 40px;
+    }
+
+    /* Quadrado de conteúdo - inicia adaptação proporcional */
+    .quadrado_conteudo {
+        width: 15vw;
+        min-width: 160px;
+        padding: clamp(20px, 3vw, 32px);
+    }
+
+    .quadrado_conteudo h1 {
+        font-size: clamp(24px, 4.5vw, 30px);
+    }
+
+    .quadrado_conteudo p {
+        font-size: clamp(10px, 1.8vw, 12px);
+        margin-top: clamp(60px, 9vw, 85px);
+    }
+
+
+    .brand {
+        padding-left: 60px;
+    }
+
+    .brand img {
+        padding-right: 60px;
+        max-width: 400px;
+    }
+
+    .brand-info {
+        padding: 80px 25px 80px 60px;
+        max-width: 380px;
+    }
+
+    footer {
+        width: 90%;
+        max-width: 1000px;
+    }
+}
+
+/* Tablet pequeno - 768px e abaixo */
+@media (max-width: 768px) {
+
+    /* Navbar - ajustes para mobile */
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .navbar_logo {
+        margin-left: 20px;
+        height: 25px;
+    }
+
+    /* Quadrado de conteúdo - mantém proporções com a imagem */
+    .quadrado_conteudo {
+        width: 16vw;
+        min-width: 140px;
+        left: 5%;
+        bottom: 11.5%;
+        padding: clamp(15px, 2.5vw, 32px);
+        height: 29%;
+    }
+
+    .quadrado_conteudo h1 {
+        font-size: clamp(18px, 4vw, 30px);
+    }
+
+    .quadrado_conteudo p {
+        font-size: clamp(9px, 1.5vw, 12px);
+        margin-top: clamp(40px, 8vw, 85px);
+    }
+
+    /* Brand section - muda para layout vertical */
+    .brand {
+        flex-direction: column;
+        padding-left: 20px;
+        align-items: center;
+    }
+
+    .brand-info {
+        padding: 40px 20px;
+        max-width: 100%;
+        width: 90%;
+        border-right: 2.5px solid #868686;
+        margin-bottom: 20px;
+    }
+
+    .brand img {
+        padding-right: 20px;
+        margin-top: 0;
+        max-width: 90%;
+        height: auto;
+    }
+
+    /* Footer - layout vertical */
+    footer {
+        flex-direction: column;
+        width: 90%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer__brand {
+        margin-bottom: 20px;
+        justify-content: center;
+    }
+
+    .footer-contact {
+        margin-left: 0;
+        align-items: center;
+    }
+}
+
+/* Mobile - 480px e abaixo */
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .navbar_logo {
+        margin-left: 15px;
+        height: 22px;
+    }
+
+
+    .quadrado_conteudo {
+        width: 18vw;
+        min-width: 120px;
+        left: 3%;
+        bottom: 11.5%;
+        padding: clamp(12px, 2vw, 32px);
+        height: 29%;
+    }
+
+    .quadrado_conteudo h1 {
+        font-size: clamp(16px, 3.5vw, 20px);
+    }
+
+    .quadrado_conteudo p {
+        font-size: clamp(8px, 1.2vw, 9px);
+        margin-top: clamp(30px, 6vw, 40px);
+    }
+
+
+    .brand {
+        padding-left: 15px;
+    }
+
+    .brand-info {
+        padding: 30px 15px;
+        width: 95%;
+    }
+
+    .brand-info h2 {
+        font-size: 1.3em;
+    }
+
+    .brand-info p {
+        font-size: 0.8em;
+        line-height: 1.6;
+    }
+
+    .brand img {
+        padding-right: 15px;
+        max-width: 95%;
+    }
+
+    /* Footer - compacto para mobile */
+    footer {
+        width: 95%;
+        padding: 20px 10px;
+    }
+
+    .footer__brand {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer__brand img {
+        height: 100px;
+        padding-left: 0;
+    }
+
+    .footer-contact {
+        gap: 12px;
+    }
 }
