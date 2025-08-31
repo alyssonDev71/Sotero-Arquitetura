@@ -94,6 +94,31 @@
             </div>
         </div>
     </footer>
+    <script>
+        const projetos = [
+            { img: "assets/img/image3.png", texto: "Casa Bomba - Bahia" },
+            { img: "assets/img/image 2.png", texto: "Casa Bomba - Bahia" },
+            { img: "assets/img/image 1.png", texto: "Casa Bomba - Bahia" }
+        ];
+
+        const containerCard = document.querySelector(".casa_bomba-projetos");
+
+        const repeticoes = 3;
+
+        for (let r = 0; r < repeticoes; r++) {
+            projetos.forEach(projeto => {
+                const card = document.createElement("div");
+                card.classList.add("card");
+                card.innerHTML = `
+        <img src="${projeto.img}" alt="${projeto.texto}">
+        <p>${projeto.texto}</p>
+      `;
+                containerCard.appendChild(card);
+            });
+        }
+
+
+    </script>
     <script src="js/script.js"></script>
 </body>
 

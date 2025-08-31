@@ -97,64 +97,6 @@ if (compartilharButton) {
       }, 2000);
     }
   });
-}
+};
 
 
-const projetos = [
-  { img: "assets/img/image3.png", texto: "Casa Bomba - Bahia" },
-  { img: "assets/img/image 2.png", texto: "Casa Bomba - Bahia" },
-  { img: "assets/img/image 1.png", texto: "Casa Bomba - Bahia" }
-];
-
-const containerCard = document.querySelector(".casa_bomba-projetos");
-
-const repeticoes = 3;
-
-for (let r = 0; r < repeticoes; r++) {
-  projetos.forEach(projeto => {
-    const card = document.createElement("div");
-    card.classList.add("card");
-    card.innerHTML = `
-        <img src="${projeto.img}" alt="${projeto.texto}">
-        <p>${projeto.texto}</p>
-      `;
-    containerCard.appendChild(card);
-  });
-}
-
-// Função para repetir elementos dinamicamente
-function repetirElemento(seletor, quantidade) {
-  // Encontra o elemento original
-  const elementoOriginal = document.querySelector(seletor);
-
-  if (!elementoOriginal) {
-    console.error(`Elemento com seletor "${seletor}" não encontrado.`);
-    return;
-  }
-
-  const containerPai = elementoOriginal.parentElement;
-
-  const copias = containerPai.querySelectorAll(`${seletor}:not(:first-of-type)`);
-  copias.forEach(copia => copia.remove());
-
-
-  for (let i = 1; i < quantidade; i++) {
-    const clone = elementoOriginal.cloneNode(true);
-
-    const nomeElement = clone.querySelector('.nome');
-    if (nomeElement) {
-      nomeElement.textContent = `NOME DO PROJETO ${i + 1}`;
-    }
-
-    containerPai.appendChild(clone);
-  }
-}
-
-
-function repetirListaClassificacao(quantidade = 15) {
-  repetirElemento('.lista__classificacao', quantidade);
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  repetirListaClassificacao(15);
-});
