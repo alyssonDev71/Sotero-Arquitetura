@@ -4,7 +4,7 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/assets/fontes/(.*)",
+      "source": "../assets/fontes/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
