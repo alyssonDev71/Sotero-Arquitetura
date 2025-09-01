@@ -1,39 +1,37 @@
 // Menu Hambúrguer
-document.addEventListener('DOMContentLoaded', function () {
-  const menuToggle = document.getElementById('menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
 
-  menuToggle.addEventListener('click', function () {
-    navLinks.classList.toggle('active');
-  });
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", function () {
+      navLinks.classList.toggle("active");
+    });
+  }
 });
 
 // Interatividade do Navbar
-const navLinksItems = document.querySelectorAll('.nav-links a');
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const navLinksItems = document.querySelectorAll(".nav-links a");
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
 navLinksItems.forEach(link => {
-  const linkPage = link.getAttribute('href');
+  const linkPage = link.getAttribute("href");
 
+  // Remove a classe 'active' de todos os links primeiro
+  link.classList.remove("active");
 
-  link.classList.remove('active');
-
-
+  // Adiciona a classe 'active' ao link da página atual
   if (linkPage === currentPage ||
-    (currentPage === '' && linkPage === 'index.html') ||
-    (currentPage === 'projetos-single.html' && linkPage === 'projetos-single.html')) {
-    link.classList.add('active');
+    (currentPage === "" && linkPage === "index.html")) {
+    link.classList.add("active");
   }
 
   // Adiciona evento de clique para marcar como ativo
-  link.addEventListener('click', function (e) {
-
+  link.addEventListener("click", function (e) {
     navLinksItems.forEach(otherLink => {
-      otherLink.classList.remove('active');
+      otherLink.classList.remove("active");
     });
-
-
-    this.classList.add('active');
+    this.classList.add("active");
   });
 });
 // Scroll suave para a seção Ficha Técnica
