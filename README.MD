@@ -24,5 +24,4 @@ Projeto de website institucional, desenvolvido como uma avaliação de front-end
 
 ## Links
 
-- Deploy online: (adicionar link do GitHub Pages / Netlify / Vercel)
 - Código fonte: <https://github.com/alyssonDev71/Sotero-Arquitetura>
