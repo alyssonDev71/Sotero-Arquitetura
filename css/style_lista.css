@@ -1,14 +1,14 @@
 /*IMPORTAÇÕES*/
 @font-face {
     font-family: "Nexa Text";
-    src: url("/assets/fontes/Nexa-ExtraLight.ttf");
+    src: url("../assets/fontes/Nexa-ExtraLight.ttf");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Nexa Bold";
-    src: url("/assets/fontes/Nexa-Bold.ttf");
+    src: url("../assets/fontes/Nexa-Bold.ttf");
     font-weight: normal;
     font-size: normal;
 }
